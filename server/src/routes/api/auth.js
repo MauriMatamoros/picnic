@@ -1,9 +1,10 @@
 const express = require('express')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const { check, validationResult } = require('express-validator')
+const { check } = require('express-validator')
 
 const auth = require('../../middleware/auth')
+const validationResult = require('../../middleware/validationResult')
 const User = require('../../models/User')
 
 const router = express.Router()
@@ -17,12 +18,9 @@ router.post(
 			'Please enter a password with 6 or more characters'
 		).isLength({ min: 6 })
 	],
+	validationResult,
 	async (req, res) => {
 		try {
-			const errors = validationResult(req)
-			if (!errors.isEmpty()) {
-				return res.status(400).json({ errors: errors.array() })
-			}
 			const { email, password } = req.body
 			let user = await User.findOne({ email })
 			if (user) {
@@ -55,12 +53,9 @@ router.post(
 			'Please enter a password with 6 or more characters'
 		).isLength({ min: 6 })
 	],
+	validationResult,
 	async (req, res) => {
 		try {
-			const errors = validationResult(req)
-			if (!errors.isEmpty()) {
-				return res.status(400).json({ errors: errors.array() })
-			}
 			const { email, password } = req.body
 			let user = await User.findOne({ email }).select('+password')
 			if (!user) {
