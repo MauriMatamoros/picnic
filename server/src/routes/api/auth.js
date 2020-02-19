@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const { check, validationResult } = require('express-validator')
 
+const auth = require('../../middleware/auth')
 const User = require('../../models/User')
 
 const router = express.Router()
@@ -37,7 +38,7 @@ router.post(
 			const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
 				expiresIn: '1d'
 			})
-			res.status(201).json(token)
+			res.status(201).json({ token })
 		} catch (error) {
 			console.error(error)
 			res.status(500).send('Error signing up user. Please try again later.')
@@ -70,7 +71,7 @@ router.post(
 				const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
 					expiresIn: '1d'
 				})
-				res.status(201).json(token)
+				res.status(201).json({ token })
 			} else {
 				res.status(401).json({
 					errors: [
@@ -86,5 +87,15 @@ router.post(
 		}
 	}
 )
+
+router.get('/', auth, async (req, res) => {
+	try {
+		const user = await User.findById(req.user).select('-password')
+		res.json(user)
+	} catch (error) {
+		console.error(error.message)
+		res.status(500).send('Server Error. Unable to fetch user.')
+	}
+})
 
 module.exports = router
