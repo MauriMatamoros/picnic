@@ -4,7 +4,7 @@
   "description": "App for PartnerHero",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/MauriMatamoros/picnic/issues"
   },
-  "homepage": "https://github.com/MauriMatamoros/picnic#readme"
+  "homepage": "https://github.com/MauriMatamoros/picnic#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.8",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
