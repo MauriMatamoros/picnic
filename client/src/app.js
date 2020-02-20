@@ -18,6 +18,8 @@ import LandingPage from './pages/LandingPage'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Ingredients from './pages/Ingredients'
+import Ingredient from './pages/Ingredient'
+import Search from './pages/Search'
 
 import './styles/styles.scss'
 
@@ -39,6 +41,12 @@ const App = () => {
 						<PublicRoute exact path='/login' component={Login} />
 						<PublicRoute exact path='/signup' component={SignUp} />
 						<PrivateRoute exact path='/ingredients' component={Ingredients} />
+						<PrivateRoute exact path='/search' component={Search} />
+						<PrivateRoute
+							exact
+							path='/ingredients/:id'
+							component={Ingredient}
+						/>
 					</Switch>
 				</>
 			</Router>

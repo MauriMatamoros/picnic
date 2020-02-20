@@ -11,6 +11,7 @@ const NavBar = ({ isAuthenticated, logout }) => {
 			{isAuthenticated ? (
 				<>
 					<Link to='/ingredients'>Ingredients</Link>
+					<Link to='/search'>Search</Link>
 					<button onClick={() => logout()}>Logout</button>
 				</>
 			) : (

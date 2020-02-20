@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 
-const AuthForm = ({ onSubmit }) => {
+const IngredientForm = ({ onSubmit }) => {
 	const INITIAL_STATE = {
-		email: '',
-		password: ''
+		name: '',
+		description: ''
 	}
+
 	const [payload, setPayload] = useState(INITIAL_STATE)
 
 	const handleChange = (e) => {
@@ -22,18 +23,17 @@ const AuthForm = ({ onSubmit }) => {
 				onSubmit(payload)
 			}}
 		>
-			<label>Email</label>
+			<label>Name</label>
 			<input
-				type='email'
-				name='email'
-				value={payload.email}
+				type='text'
+				name='name'
+				value={payload.name}
 				onChange={handleChange}
 			/>
-			<label>Password</label>
-			<input
-				type='password'
-				name='password'
-				value={payload.password}
+			<label>Description</label>
+			<textarea
+				name='description'
+				value={payload.description}
 				onChange={handleChange}
 			/>
 			<input type='submit' value='Submit' />
@@ -41,4 +41,4 @@ const AuthForm = ({ onSubmit }) => {
 	)
 }
 
-export default AuthForm
+export default IngredientForm
