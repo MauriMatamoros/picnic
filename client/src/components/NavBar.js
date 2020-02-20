@@ -10,20 +10,36 @@ const NavBar = ({ isAuthenticated, logout }) => {
 	return location.pathname === '/' ? (
 		<></>
 	) : (
-		<div>
-			<Link to='/'>LandingPage</Link>
-			{isAuthenticated ? (
-				<>
-					<Link to='/ingredients'>Ingredients</Link>
-					<Link to='/search'>Search</Link>
-					<button onClick={() => logout()}>Logout</button>
-				</>
-			) : (
-				<>
-					<Link to='/login'>Login</Link>
-					<Link to='/signup'>Signup</Link>
-				</>
-			)}
+		<div className='navbar'>
+			<div>
+				<Link className='navbar__link' to='/'>
+					Home
+				</Link>
+			</div>
+			<div>
+				{isAuthenticated ? (
+					<>
+						<Link className='navbar__link' to='/ingredients'>
+							Ingredients
+						</Link>
+						<Link className='navbar__link' to='/search'>
+							Search
+						</Link>
+						<button className='navbar__button' onClick={() => logout()}>
+							Logout
+						</button>
+					</>
+				) : (
+					<>
+						<Link className='navbar__link' to='/login'>
+							Login
+						</Link>
+						<Link className='navbar__link' to='/signup'>
+							Signup
+						</Link>
+					</>
+				)}
+			</div>
 		</div>
 	)
 }

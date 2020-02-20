@@ -18,25 +18,40 @@ const IngredientForm = ({ onSubmit }) => {
 
 	return (
 		<form
+			className='form'
 			onSubmit={(e) => {
 				e.preventDefault()
 				onSubmit(payload)
 			}}
 		>
-			<label>Name</label>
-			<input
-				type='text'
-				name='name'
-				value={payload.name}
-				onChange={handleChange}
-			/>
-			<label>Description</label>
-			<textarea
-				name='description'
-				value={payload.description}
-				onChange={handleChange}
-			/>
-			<input type='submit' value='Submit' />
+			<div className='form__group'>
+				<input
+					className='form__input'
+					type='text'
+					name='name'
+					id='name'
+					value={payload.name}
+					onChange={handleChange}
+				/>
+				<label for='name' class='form__label'>
+					Name
+				</label>
+			</div>
+			<div className='form__group'>
+				<textarea
+					className='form__input'
+					name='description'
+					value={payload.description}
+					onChange={handleChange}
+					id='description'
+				/>
+				<label for='name' class='form__label'>
+					Description
+				</label>
+			</div>
+			<div className='btn__box--form'>
+				<input type='submit' value='Submit' className='btn btn--form' />
+			</div>
 		</form>
 	)
 }

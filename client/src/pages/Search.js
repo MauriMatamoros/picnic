@@ -15,12 +15,29 @@ const Search = ({ ingredients, searchIngredients }) => {
 		searchIngredients(query)
 	}
 	return (
-		<div>
-			<form onSubmit={onSubmit}>
-				<input onChange={handleChange} value={query} />
-				<input type='submit' value='Submit' />
-			</form>
-			<IngredientsList ingredients={ingredients} />
+		<div className='container'>
+			<div className='box'>
+				<div className='box__heading'>
+					<h2 className='heading-secondary'>Search</h2>
+				</div>
+				<form className='form' onSubmit={onSubmit}>
+					<div className='form__group'>
+						<input
+							id='search'
+							onChange={handleChange}
+							value={query}
+							className='form__input'
+						/>
+						<label for='search' class='form__label'>
+							Search
+						</label>
+					</div>
+					<div className='btn__box--form'>
+						<input type='submit' value='Submit' className='btn btn--form' />
+					</div>
+				</form>
+				<IngredientsList ingredients={ingredients} />
+			</div>
 		</div>
 	)
 }

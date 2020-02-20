@@ -8,7 +8,16 @@ const Login = ({ login }) => {
 	const onSubmit = (payload) => {
 		login(payload)
 	}
-	return <AuthForm onSubmit={onSubmit} />
+	return (
+		<div className='container'>
+			<div className='box'>
+				<div className='box__heading'>
+					<h2 className='heading-secondary'>Login</h2>
+				</div>
+				<AuthForm onSubmit={onSubmit} />
+			</div>
+		</div>
+	)
 }
 
 export default connect(null, { login })(Login)

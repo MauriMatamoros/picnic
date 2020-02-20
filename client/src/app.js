@@ -34,22 +34,16 @@ const App = () => {
 	return (
 		<Provider store={store}>
 			<Router>
-				<>
-					<NavBar />
-					<Switch>
-						<Route exact path='/' component={LandingPage} />
-						<PublicRoute exact path='/login' component={Login} />
-						<PublicRoute exact path='/signup' component={SignUp} />
-						<PrivateRoute exact path='/ingredients' component={Ingredients} />
-						<PrivateRoute exact path='/search' component={Search} />
-						<PrivateRoute
-							exact
-							path='/ingredients/:id'
-							component={Ingredient}
-						/>
-					</Switch>
-					<Footer />
-				</>
+				<NavBar />
+				<Switch>
+					<Route exact path='/' component={LandingPage} />
+					<PublicRoute exact path='/login' component={Login} />
+					<PublicRoute exact path='/signup' component={SignUp} />
+					<PrivateRoute exact path='/ingredients' component={Ingredients} />
+					<PrivateRoute exact path='/search' component={Search} />
+					<PrivateRoute exact path='/ingredients/:id' component={Ingredient} />
+				</Switch>
+				<Footer />
 			</Router>
 		</Provider>
 	)

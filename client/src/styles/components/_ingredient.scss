@@ -1,0 +1,45 @@
+.ingredient {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+
+    &__name {
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: $color-grey-dark;
+        cursor: pointer;
+
+        &:visited {
+            text-decoration: none;
+        }
+    }
+
+    &__description {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: $color-grey-dark
+    }
+
+    &__button {
+        padding: 1rem;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        text-transform: uppercase;
+        transition: all 0.2s;
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-primary;
+            box-shadow: 0 1rem 2rem rgba($color-black, .15);
+            transform: translateY(-2px);
+        }
+
+        &:active {
+            box-shadow: 0 0.5rem 1rem rgba($color-black, .15);
+            transform: translateY(0);
+        }
+    }
+
+}

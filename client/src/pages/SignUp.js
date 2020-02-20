@@ -8,7 +8,16 @@ const SignUp = ({ register }) => {
 	const onSubmit = (payload) => {
 		register(payload)
 	}
-	return <AuthForm onSubmit={onSubmit} />
+	return (
+		<div className='container'>
+			<div className='box'>
+				<div className='box__heading'>
+					<h2 className='heading-secondary'>Signup</h2>
+				</div>
+				<AuthForm onSubmit={onSubmit} />
+			</div>
+		</div>
+	)
 }
 
 export default connect(null, { register })(SignUp)

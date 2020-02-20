@@ -13,3 +13,22 @@ html {
 body {
     box-sizing: border-box;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: $color-grey-light-1;
+    min-height: 65vh;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.box {
+    margin-top: 2rem;
+    width: 80%;
+
+    &__heading {
+        text-align: center;
+    }
+}

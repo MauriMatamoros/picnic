@@ -46,9 +46,9 @@ const Footer = () => (
 					<a href='#' className='footer__link'>
 						Jonas Schmedtmann.
 					</a>{' '}
-					Credit where credit is do. I took the design for the landing page from
-					one of the courses I've taken from Udemy. The one in particular is
-					Jonas' Advanced CSS course. Loved it.
+					Credit where credit is do. I took the design inspiration for the
+					landing page from one of the courses I've taken from Udemy. The one in
+					particular is Jonas' Advanced CSS course. Loved it.
 				</p>
 			</div>
 		</div>

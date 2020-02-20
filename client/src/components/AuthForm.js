@@ -17,26 +17,42 @@ const AuthForm = ({ onSubmit }) => {
 
 	return (
 		<form
+			className='form'
 			onSubmit={(e) => {
 				e.preventDefault()
 				onSubmit(payload)
 			}}
 		>
-			<label>Email</label>
-			<input
-				type='email'
-				name='email'
-				value={payload.email}
-				onChange={handleChange}
-			/>
-			<label>Password</label>
-			<input
-				type='password'
-				name='password'
-				value={payload.password}
-				onChange={handleChange}
-			/>
-			<input type='submit' value='Submit' />
+			<div className='form__group'>
+				<input
+					className='form__input'
+					id='email'
+					type='email'
+					name='email'
+					value={payload.email}
+					onChange={handleChange}
+				/>
+				<label for='email' className='form__label'>
+					Email
+				</label>
+			</div>
+
+			<div className='form__group'>
+				<input
+					className='form__input'
+					id='password'
+					type='password'
+					name='password'
+					value={payload.password}
+					onChange={handleChange}
+				/>
+				<label for='password' className='form__label'>
+					Password
+				</label>
+			</div>
+			<div className='btn__box--form'>
+				<input type='submit' value='Submit' className='btn btn--form' />
+			</div>
 		</form>
 	)
 }

@@ -6,13 +6,20 @@ import { deleteIngredient } from '../redux/actions/ingredients'
 
 const IngredientItem = ({ _id, name, description, deleteIngredient }) => {
 	return (
-		<div>
+		<div className='ingredient'>
 			<div>
-				<Link to={`/ingredients/${_id}`}>{name}</Link>
-				<p>{description}</p>
+				<Link className='ingredient__name' to={`/ingredients/${_id}`}>
+					{name}
+				</Link>
+				<p className='ingredient__description'>{description}</p>
 			</div>
 			<div>
-				<button onClick={() => deleteIngredient(_id)}>remove</button>
+				<button
+					className='ingredient__button'
+					onClick={() => deleteIngredient(_id)}
+				>
+					remove
+				</button>
 			</div>
 		</div>
 	)

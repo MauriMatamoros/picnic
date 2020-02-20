@@ -18,9 +18,14 @@ const Ingredient = ({ ingredient, getIngredient, updateIngredient }) => {
 	}
 
 	return (
-		<div>
-			<IngredientItem {...ingredient} />
-			<IngredientForm onSubmit={onSubmit} />
+		<div className='container'>
+			<div className='box'>
+				<div className='box__heading'>
+					<h2 className='heading-secondary'>Edit</h2>
+				</div>
+				<IngredientItem {...ingredient} />
+				<IngredientForm onSubmit={onSubmit} />
+			</div>
 		</div>
 	)
 }

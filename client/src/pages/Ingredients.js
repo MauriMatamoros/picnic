@@ -15,10 +15,14 @@ const Ingredients = ({ ingredients, getIngredients, addIngredient }) => {
 		addIngredient(payload)
 	}
 	return (
-		<div>
-			<h2>Ingredients</h2>
-			<IngredientForm onSubmit={onSubmit} />
-			<IngredientsList ingredients={ingredients} />
+		<div className='container'>
+			<div className='box'>
+				<div className='box__heading'>
+					<h2 className='heading-secondary'>Ingredients</h2>
+				</div>
+				<IngredientForm onSubmit={onSubmit} />
+				<IngredientsList ingredients={ingredients} />
+			</div>
 		</div>
 	)
 }
