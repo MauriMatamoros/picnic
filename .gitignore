@@ -1,4 +1,6 @@
 node_modules/
 .env
-bundle.*
-style.*
+bundle.js
+bundle.js.map
+style.css
+style.css.map
