@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack:///./src/styles/styles.scss"],"names":[],"mappings":"AAAA,EACI,SAAU","file":"style.css","sourcesContent":["* {\n    color: red;\n}"],"sourceRoot":""}
+{"version":3,"sources":["webpack:///./src/styles/base/_base.scss"],"names":[],"mappings":"AAAA,qBAGI,QAAS,CACT,SAAU,CACV,kBAAmB,CACtB,KAGG,eAAgB,CACnB,KAGG,qBAAsB","file":"style.css","sourcesContent":["*,\n*::after,\n*::before {\n    margin: 0;\n    padding: 0;\n    box-sizing: inherit;\n}\n\nhtml {\n    font-size: 62.5%;\n}\n\nbody {\n    box-sizing: border-box;\n}"],"sourceRoot":""}
