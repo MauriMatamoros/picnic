@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 
 import { logout } from '../redux/actions/auth'
 
 const NavBar = ({ isAuthenticated, logout }) => {
-	return (
+	const location = useLocation()
+	return location.pathname === '/' ? (
+		<></>
+	) : (
 		<div>
 			<Link to='/'>LandingPage</Link>
 			{isAuthenticated ? (
