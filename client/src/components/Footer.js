@@ -40,7 +40,7 @@ const Footer = () => (
 				<p className='footer__copyright'>
 					Built by{' '}
 					<a href='#' className='footer__link'>
-						Mauricio Matamoros
+						Mauricio E. Matamoros
 					</a>{' '}
 					inspired by{' '}
 					<a href='#' className='footer__link'>
